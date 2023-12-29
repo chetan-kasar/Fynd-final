@@ -13,9 +13,9 @@ const SignUp = () => {
 
     const signUpUser = async ()=>{
         try {
-            let response = await axios.post('http://localhost:5000/signUp-User', {username, password}).then(response=>{
+            let response = await axios.post('https://fynd-final-backend.vercel.app/signUp-User', {username, password}).then(response=>{
                 if(response.data == "Unique User")
-                    window.location.href = 'http://localhost:3000/';
+                    window.location.href = 'https://fynd-final-frontend.vercel.app/';
 
                 else{
                     setMessage("Please Enter Unique Username !");

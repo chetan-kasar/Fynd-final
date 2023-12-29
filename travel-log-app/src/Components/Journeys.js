@@ -14,7 +14,7 @@ const Journeys = (props) => {
   const publicCard = async (cardID)=>{
     try {
       console.log(cardID);
-      let response = await axios.post('http://localhost:5000/public-card', {cardID});
+      let response = await axios.post('https://fynd-final-backend.vercel.app/public-card', {cardID});
   } catch (error) {
       console.error('Error sending card id:', error);
     }
@@ -23,7 +23,7 @@ const Journeys = (props) => {
   const deleteCard = async (cardID)=>{
     try {
       console.log(cardID);
-      let response = await axios.post('http://localhost:5000/delete-card', {cardID});
+      let response = await axios.post('https://fynd-final-backend.vercel.app/delete-card', {cardID});
   } catch (error) {
       console.error('Error sending card id:', error);
     }
@@ -33,7 +33,7 @@ const Journeys = (props) => {
     const username = localStorage.getItem("profile");
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/get?username=${username}`)
+        axios.get(`https://fynd-final-backend.vercel.app/get?username=${username}`)
           .then(response => {
             setUserData(response.data);
           })

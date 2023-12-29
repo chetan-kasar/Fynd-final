@@ -14,7 +14,7 @@ const PublicCards = (props) => {
     const [publicData, setPublicData] = useState([]);
     
     useEffect(() => {
-        axios.get("http://localhost:5000/access-public-cards")
+        axios.get("https://fynd-final-backend.vercel.app/access-public-cards")
           .then(response => {
             setPublicData(response.data);
           })

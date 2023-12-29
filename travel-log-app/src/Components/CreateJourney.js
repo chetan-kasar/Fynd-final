@@ -76,7 +76,7 @@ const CreateJourney = (props) => {
     userData.dateTime = {date:date, time:time};
 
     try {
-      let response = await axios.post('http://localhost:5000/add', {userData});
+      let response = await axios.post('https://fynd-final-backend.vercel.app/add', {userData});
     } catch (error) {
         console.error('Error sending username:', error);
       }
@@ -227,7 +227,7 @@ const CreateJourney = (props) => {
             <div className='moment-page'>
                 <h1>Add Photos</h1>
                 <img className="photos" src={dispPhotos} alt=""/>
-                <form action='http://localhost:5000/album' method='post' name='Endgame' encType='multipart/form-data'>
+                <form action='https://fynd-final-backend.vercel.app/album' method='post' name='Endgame' encType='multipart/form-data'>
                   <input type="file" id="" name="photoAlbum" accept="image/*" onChange={photosSelected} multiple></input>
                   <button type='submit'>save</button>
                 </form>
@@ -246,7 +246,7 @@ const CreateJourney = (props) => {
         formData.append('titleImage', titleImage);
 
         try {
-            let response = await axios.post('http://localhost:5000/upload', formData,{headers: {"Content-Type": "multipart/form-data"}});
+            let response = await axios.post('https://fynd-final-backend.vercel.app/upload', formData,{headers: {"Content-Type": "multipart/form-data"}});
         } catch (error) {
             console.error('Error sending username:', error);
           }

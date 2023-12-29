@@ -14,9 +14,9 @@ const LoginPage = (props) => {
     const loginUser = async ()=>{
         localStorage.setItem("profile",username);
         try {
-            let response = await axios.post('http://localhost:5000/userLogin', {username, password}).then(response=>{
+            let response = await axios.post('https://fynd-final-backend.vercel.app/userLogin', {username, password}).then(response=>{
                 if(response.data == "User Varified")
-                window.location.href = 'http://localhost:3000/home';
+                window.location.href = 'https://fynd-final-frontend.vercel.app/home';
 
                 else{
                     setMessage("Account Not Found !");

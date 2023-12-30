@@ -613,3 +613,40 @@ a{
   width: 25px;
   margin-right: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+  .moment-page {
+    width: 100%; 
+    height: 600px;
+  }
+
+  .tital-img{
+    width: 90%;
+  }
+
+  .weathers-ele img{
+    height: 35px;
+    width: 35px;
+  }
+
+  .moment-page-flight{
+    width: 100%;
+    height: 600px;
+  }
+
+  .moment-page .photos{
+    width:90%;
+    height:40%;
+  }
+
+  .addJourni-btn{
+    margin-left: 40%;
+  }
+
+  .home-page h1 img{
+    visibility: hidden;
+  }
+  .card{
+    margin: 5%;
+  }
+}

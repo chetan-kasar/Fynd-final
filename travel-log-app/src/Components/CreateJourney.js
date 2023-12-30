@@ -25,8 +25,6 @@ const CreateJourney = (props) => {
     const [temprature, setTemprature] = useState(21);
 
     const [title, setTitle] = useState("My Title");
-    const [titleImage, setTitleImage] = useState("");
-    const [dispImage, setDispImage] = useState(require("../Icons/Travel.jpg"));
 
     const [txtContent, setTxtContent] = useState("");
 
@@ -238,6 +236,9 @@ const CreateJourney = (props) => {
 
   const TitleContent = () => {
     const [localTitle, setLocalTitle] = useState("My Title");
+    const [titleImage, setTitleImage] = useState("");
+    const [dispImage, setDispImage] = useState(require("../Icons/Travel.jpg"));
+    
     const addTitle = async ()=>{
         setTitle(localTitle);
         titleData.title = title;

@@ -38,7 +38,7 @@ const CreateJourney = (props) => {
 
     let titleData = {
         title:title,
-        titleImage:titleImage,
+        titleImage:"",
     }
 
     let albumData = {

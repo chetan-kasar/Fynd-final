@@ -14,6 +14,15 @@ const UserContent = (props) => {
     marginTop:"23px",
   }
 
+  var L = window.L;
+  const customIcon = new L.Icon({
+    iconUrl: popup,
+    iconSize: [40, 40], 
+    iconAnchor: [20, 40], 
+  });
+
+  const center = [22.005565, 79.057514];
+
   return (
     <div className="userData">
       <div className="child1">

@@ -17,9 +17,6 @@ const Navbar = ({profile}) => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav ms-auto ">
           <li className="nav-item">
-            <Link to="/map" className="nav-link mx-2" aria-current="page">Map</Link>
-          </li>
-          <li className="nav-item">
             <Link to="/home" className="nav-link mx-2" aria-current="page">Home</Link>
           </li>
           <li className="nav-item">

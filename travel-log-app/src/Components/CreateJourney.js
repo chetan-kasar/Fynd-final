@@ -61,7 +61,8 @@ const CreateJourney = (props) => {
     albumData:albumData,
     textContent:textContent,
     flightData:flight,
-    dateTime:{}
+    dateTime:{},
+    mapData:latlng,
   }
 
   const addJourni = async ()=>{
@@ -69,6 +70,7 @@ const CreateJourney = (props) => {
     userData.titleData = titleData;
     userData.textContent = textContent;
     userData.flightData = flight;
+    userData.mapData = latlng;
 
     const currentDate = new Date();
     const date = currentDate.toDateString(); 

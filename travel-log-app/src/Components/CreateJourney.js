@@ -30,6 +30,8 @@ const CreateJourney = (props) => {
 
     const [flight, setFlight] = useState({});
 
+    const [latlng, setLatLng] = useState([]);
+
     let weatherData = {
         weather: weather,
         weatherImg: weatherImg,
@@ -290,9 +292,53 @@ const CreateJourney = (props) => {
         )
   };
 
+const Map = ()=>{
+    const [localLatLng, setLocalLatLng] = useState([]);
+    var L = window.L;
+    const center = [22.005565, 79.057514];
+
+    const customIcon = new L.Icon({
+      iconUrl: popup,
+      iconSize: [40, 40], 
+      iconAnchor: [20, 40], 
+    });
+
+    const addMapLocations = ()=>{
+      setLatLng(localLatLng);
+    }
+
+    function MyComponent() {
+      const map = useMapEvents({
+        click: (e) => {
+          const { lat, lng } = e.latlng;
+          L.marker([lat, lng], {icon:customIcon}).addTo(map);
+          setLocalLatLng([...localLatLng, [lat, lng]]);
+          console.log(localLatLng);
+        }
+      });
+    }  
+
+    return (
+      <>
+      <div className='map-container'>
+        <MapContainer center={center} zoom={5} className='map-style'>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+
+          <MyComponent />
+        </MapContainer>
+        <button onClick={addMapLocations}>save</button>
+      </div>
+      </>
+    )
+  }
+
   return (
     <div className='top'>
         <div>
+            {showContent === "map" && <Map/>}
             {showContent === "weather" && <WeatherContent/>}
             {showContent === 'flight' && <FlightContent />}
             {showContent === 'add' && <AddContent />}
@@ -306,7 +352,10 @@ const CreateJourney = (props) => {
 
             <nav>
                 <ul>
-                <li>
+                    <li>
+                    <span onClick={handleClick} name="map">Map</span>
+                    </li>
+                    <li>
                     <span onClick={handleClick} name="title">Title</span>
                     </li>
                     <li>

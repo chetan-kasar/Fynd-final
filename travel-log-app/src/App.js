@@ -60,6 +60,11 @@ function App() {
           <Route path="/public-cards" element={<><Navbar/><PublicCards cardClick={cardClick}/></>}>
           </Route>
         </Routes>
+
+        <Routes>
+          <Route path="/map" element={<><Navbar/><Map/></>}>
+          </Route>
+        </Routes>
       </BrowserRouter>
 
     </div>

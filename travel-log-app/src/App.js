@@ -7,7 +7,7 @@ import UserContent from './Components/UserContent';
 import LoginPage from './Components/Login-page';
 import SignUp from './Components/SignUp';
 import PublicCards from './Components/Public-Cards';
-import Map from './Components/Map';
+import Map from './Components/Map'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useRef, useState } from 'react';
 

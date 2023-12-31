@@ -23,7 +23,7 @@ const UserContent = (props) => {
 
         <div className="child2">
           <div className="heading">Weather</div>
-          <img src={props.userData.weatherData.weatherImg style={styleMargin}}/>
+          <img src={props.userData.weatherData.weatherImg} style={styleMargin}/>
           <h1>{props.userData.weatherData.weather}</h1>
           <h1>{props.userData.weatherData.temprature} &#8451;</h1>
         </div>

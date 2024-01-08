@@ -14,6 +14,11 @@ const UserContent = (props) => {
     marginTop:"23px",
   }
 
+  const imageClicked = (ele)=>{
+    const newWindow = window.open();
+    newWindow.document.write(`<img src="data:image/jpeg;base64,${ele}" />`);
+  }
+
   var L = window.L;
   const customIcon = new L.Icon({
     iconUrl: popup,

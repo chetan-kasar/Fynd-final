@@ -255,6 +255,7 @@ a{
   width: 200px;
   margin: 2%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .userData .child4 .heading{
